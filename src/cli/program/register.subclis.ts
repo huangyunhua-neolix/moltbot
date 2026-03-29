@@ -222,6 +222,14 @@ const entries: SubCliEntry[] = [
       mod.registerUpdateCli(program);
     },
   },
+  {
+    name: "usage",
+    description: "Token usage reporting and export",
+    register: async (program) => {
+      const mod = await import("../usage-cli.js");
+      mod.registerUsageCli(program);
+    },
+  },
 ];
 
 function removeCommand(program: Command, command: Command) {
